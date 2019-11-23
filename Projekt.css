@@ -1,0 +1,28 @@
+*{
+  margin: auto;
+
+}
+td {
+  height: 100px;
+  width: 100px;
+  border: 0.1px solid black;
+}
+
+table{
+  margin: auto;
+}
+
+img{
+  margin: auto;
+  height: 100px;
+  width: 100px;
+}
+#level{
+  visibility: ;
+  font-size: 0px;
+  color: black;
+}
+.menu{
+  font-size: 20px;
+  color: black;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css"rel="stylesheet" href="Projekt.css" />
+    <script src="Projekt.js">
+
+    </script>
+
+  </head>
+
+  <body>
+    <button onclick="Spielspeichern()">Speichern</button>
+        <button onclick="CookieAuslesen()">Laden</button>
+
+        <audio autoplay loop >
+        <source src="Musik.mp3" />
+        </audio>
+
+    <table class="menu">
+      <tr>
+
+
+      </tr>
+    </table>
+
+    <table id="level">
+    <tr><!-- erste Zeile -->
+      <td class="menu" onclick="LevelLoadOne()">Level 1</td>
+      <td><img id="eins" onclick="move(' ', 'eins', 'zwei'), UpDown(' ', 'eins', 'acht')" src="i.png"></td>
+      <td><img id="zwei" onclick="move('eins', 'zwei', 'drei'), UpDown(' ', 'zwei', 'neun')" src="i.png"></td>
+      <td><img id="drei" onclick="move('zwei', 'drei', 'vier'), UpDown(' ', 'drei', 'zehn')" src="i.png"></td>
+      <td><img id="vier" onclick="move('drei', 'vier', 'fünf'), UpDown(' ', 'vier', 'elf')" src="i.png"></td>
+      <td><img id="fünf" onclick="move('vier', 'fünf', 'sechs'), UpDown(' ', 'fünf', 'zwölf')" src="i.png"></td>
+      <td><img id="sechs" onclick="move('fünf', 'sechs', 'sieben'), UpDown(' ', 'sechs', 'dreizehn')" src="i.png"></td>
+      <td><img id="sieben" onclick="move('sechs', 'sieben', ' '), UpDown(' ', 'sieben', 'vierzehn')" src="i.png"></td>
+    </tr>
+    <tr><!-- zweite Zeile -->
+      <td class="menu" onclick="LevelLoadTwo()">Level 2</td>
+      <td><img id="acht" onclick="move(' ', 'acht', 'neun'), UpDown('eins', 'acht', 'fünfzehn')" src="i.png"> </td>
+      <td><img id="neun" onclick="move('acht', 'neun', 'zehn'), UpDown('zwei', 'neun', 'sechszehn')" src="i.png"></td>
+      <td><img id="zehn" onclick="move('neun', 'zehn', 'elf'), UpDown('drei', 'zehn', 'siebzehn')" src="i.png"></td>
+      <td><img id="elf" onclick="move('zehn', 'elf', 'zwölf'), UpDown('vier', 'elf', 'achtzehn')" src="i.png"></td>
+      <td><img id="zwölf" onclick="move('elf', 'zwölf', 'dreizehn'), UpDown('fünf', 'zwölf', 'neunzehn')" src="i.png"></td>
+      <td><img id="dreizehn" onclick="move('zwölf', 'dreizehn', 'vierzehn'), UpDown('sechs', 'dreizehn', 'zwanzig')" src="i.png"></td>
+      <td><img id="vierzehn" onclick="move('dreizehn', 'vierzehn', ' '), UpDown('sieben', 'vierzehn', 'einundzwanzig')" src="i.png"></td>
+    </tr>
+    <tr><!-- dritte Zeile -->
+      <td class="menu" onclick="LevelLoadThree()">Level 3</td>
+      <td><img id="fünfzehn" onclick="move('', 'fünfzehn', 'sechszehn'), UpDown('acht', 'fünfzehn', 'zweiundzwanzig')" src="i.png"></td>
+      <td><img id="sechszehn" onclick="move('fünfzehn', 'sechszehn', 'siebzehn'), UpDown('neun', 'sechszehn', 'dreiundzwanzig')" src="i.png"></td>
+      <td><img id="siebzehn" onclick="move('sechszehn', 'siebzehn', 'achtzehn'), UpDown('zehn', 'siebzehn', 'vierundzwanzig')" src="i.png"></td>
+      <td><img id="achtzehn" onclick="move('siebzehn', 'achtzehn', 'neunzehn'), UpDown('elf', 'achtzehn', 'fünfundzwanzig')" src="i.png"></td>
+      <td><img id="neunzehn" onclick="move('achtzehn', 'neunzehn', 'zwanzig'), UpDown('zwölf', 'neunzehn', 'sechsundzwanzig')" src="i.png"></td>
+      <td><img id="zwanzig" onclick="move('neunzehn', 'zwanzig', 'einundzwanzig'), UpDown('dreizehn', 'zwanzig', 'siebenundzwanzig')" src="i.png"></td>
+      <td><img id="einundzwanzig" onclick="move('zwanzig', 'einundzwanzig', ' '), UpDown('vierzehn', 'einundzwanzig', 'achtundzwanzig')" src="i.png"></td>
+
+    </tr>
+    <tr><!-- vierte Zeile -->
+      <td class="menu" onclick="LevelLoad()">Neustart</td>
+      <td><img id="zweiundzwanzig" onclick="move('a', 'zweiundzwanzig', 'dreiundzwanzig'), UpDown('fünfzehn', 'zweiundzwanzig', 'neunundzwanzig')" src="i.png"></td>
+      <td><img id="dreiundzwanzig" onclick="move('zweiundzwanzig', 'dreiundzwanzig', 'vierundzwanzig'), UpDown('sechszehn', 'dreiundzwanzig', 'dreißig')" src="i.png"></td>
+      <td><img id="vierundzwanzig" onclick="move('dreiundzwanzig', 'vierundzwanzig', 'fünfundzwanzig'), UpDown('siebzehn', 'vierundzwanzig', 'einunddreißig')" src="i.png"></td>
+      <td><img id="fünfundzwanzig" onclick="move('vierundzwanzig', 'fünfundzwanzig', 'sechsundzwanzig'), UpDown('achtzehn', 'fünfundzwanzig', 'zweiunddreißig')" src="i.png"></td>
+      <td><img id="sechsundzwanzig" onclick="move('fünfundzwanzig', 'sechsundzwanzig', 'siebenundzwanzig'), UpDown('neunzehn', 'sechsundzwanzig', 'dreiunddreißig')" src="i.png"></td>
+      <td><img id="siebenundzwanzig" onclick="move('sechsundzwanzig', 'siebenundzwanzig', 'achtundzwanzig'), UpDown('zwanzig', 'siebenundzwanzig', 'vierunddreißig')" src="i.png"></td>
+      <td><img id="achtundzwanzig" onclick="move('siebenundzwanzig', 'achtundzwanzig', 'outone'), UpDown('einundzwanzig', 'achtundzwanzig', 'fünfunddreißig')" src="i.png"></td>
+
+      <td><img id="outone" onclick="move('achtundzwanzig', 'outone', 'outtwo'); setTimeout(win, 100);" src="i.png"></td>
+      <td><img id="outtwo" src="i.png"></td>
+    </tr>
+    <tr><!-- fünfte Zeile -->
+      <td class="menu">Timer</td>
+      <td><img id="neunundzwanzig" onclick="move(' ', 'neunundzwanzig', 'dreißig'), UpDown('zweiundzwanzig', 'neunundzwanzig', 'sechsunddreißig')" src="i.png"></td>
+      <td><img id="dreißig" onclick="move('neunundzwanzig', 'dreißig', 'einunddreißig'), UpDown('dreiundzwanzig', 'dreißig', 'siebenunddreißig')" src="i.png"></td>
+      <td><img id="einunddreißig" onclick="move('dreißig', 'einunddreißig', 'zweiunddreißig'), UpDown('vierundzwanzig', 'einunddreißig', 'achtunddreißig')" src="i.png"></td>
+      <td><img id="zweiunddreißig" onclick="move('einunddreißig', 'zweiunddreißig', 'dreiunddreißig'), UpDown('fünfundzwanzig', 'zweiunddreißig', 'neununddreißig')" src="i.png"></td>
+      <td><img id="dreiunddreißig" onclick="move('zweiunddreißig', 'dreiunddreißig', 'vierunddreißig'), UpDown('sechsundzwanzig', 'dreiunddreißig', 'vierzig')" src="i.png"></td>
+      <td><img id="vierunddreißig" onclick="move('dreiunddreißig', 'vierunddreißig', 'fünfdreißig'), UpDown('siebenundzwanzig', 'vierunddreißig', 'einundvierzig')" src="i.png"></td>
+      <td><img id="fünfunddreißig" onclick="move('vierunddreißig', 'fünfunddreißig', ' '), UpDown('achtundzwanzig', 'fünfunddreißig', 'zweiundvierzig')" src="i.png"></td>
+
+    </tr>
+    <tr><!-- sechste Zeile -->
+      <td class="menu">Audio</td>
+      <td><img id="sechsunddreißig" onclick="move('x', 'sechsunddreißig', 'siebenunddreißig'), UpDown('neunundzwanzig', 'sechsunddreißig', 'dreiundvierzig')" src="i.png"></td>
+      <td><img id="siebenunddreißig" onclick="move('sechsunddreißig', 'siebenunddreißig', 'achtunddreißig'), UpDown('dreißig', 'siebenunddreißig', 'vierundvierzig')" src="i.png"></td>
+      <td><img id="achtunddreißig" onclick="move('siebenunddreißig', 'achtunddreißig', 'neununddreißig'), UpDown('einunddreißig', 'achtunddreißig', 'fünfundvierzig')" src="i.png"></td>
+      <td><img id="neununddreißig" onclick="move('achtunddreißig', 'neununddreißig', 'vierzig'), UpDown('zweiunddreißig', 'neununddreißig', 'sechsundvierzig')" src="i.png"></td>
+      <td><img id="vierzig" onclick="move('neununddreißig', 'vierzig', 'einundvierzig'), UpDown('dreiunddreißig', 'vierzig', 'siebenundvierzig')" src="i.png"></td>
+      <td><img id="einundvierzig" onclick="move('vierzig', 'einundvierzig', 'zweiundvierzig'), UpDown('vierunddreißig', 'einundvierzig', 'achtundvierzig')" src="i.png"></td>
+      <td><img id="zweiundvierzig"onclick="move('einundvierzig', 'zweiundvierzig', ' '), UpDown('fünfunddreißig', 'zweiundvierzig', 'neunundvierzig')" src="i.png"></td>
+
+    </tr>
+    <tr><!-- siebte Zeile -->
+      <td class="menu">Pause</td>
+      <td><img id="dreiundvierzig" onclick="move(' ', 'dreiundvierzig', 'vierundvierzig'), UpDown('sechsunddreißig', 'dreiundvierzig', ' ')" src="i.png"></td>
+      <td><img id="vierundvierzig" onclick="move('dreiundvierzig', 'vierundvierzig', 'fünfundvierzig'), UpDown('siebenunddreißig', 'vierundvierzig', ' ')" src="i.png"></td>
+      <td><img id="fünfundvierzig" onclick="move('vierundvierzig', 'fünfundvierzig', 'sechsundvierzig'), UpDown('achtunddreißig', 'fünfundvierzig', ' ')" src="i.png"></td>
+      <td><img id="sechsundvierzig" onclick="move('fünfundvierzig', 'sechsundvierzig', 'siebenundvierzig'), UpDown('neununddreißig', 'sechsundvierzig', ' ')" src="i.png"></td>
+      <td><img id="siebenundvierzig" onclick="move('sechsundvierzig', 'siebenundvierzig', 'achtundvierzig'), UpDown('vierzig', 'siebenundvierzig', ' ')" src="i.png"></td>
+      <td><img id="achtundvierzig" onclick="move('siebenundvierzig', 'achtundvierzig', 'neunundvierzig'), UpDown('einundvierzig', 'achtundvierzig', ' ')" src="i.png"></td>
+      <td><img id="neunundvierzig" onclick="move('achtundvierzig', 'neunundvierzig', ' '), UpDown('zweiundvierzig', 'neunundvierzig', ' ')" src="i.png"></td>
+    </tr>
+  </body>
+</html>
